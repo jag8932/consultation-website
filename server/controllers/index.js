@@ -1,0 +1,1 @@
+module.exports.Email = require('./email_controller');
