@@ -1,3 +1,8 @@
+:root {
+  --admin_nav_bg: orange;
+  --admin_content_bg: white;
+}
+
 #root {
 /*  max-width: 1280px; */
   margin: 0 auto;
@@ -5,6 +10,23 @@
   background-color: white;
 }
 
+#admin-nav {
+  padding: 25px;
+  width: 15%;
+  border: 1px solid black;
+  background-color: var(--admin_nav_bg);
+}
+
+#admin-content {
+  padding: 25px;
+  width: 100%;
+  background-color: var(--admin_content_bg);
+}
+.menu-button {
+  margin: 5px;
+  background-color: white;
+  width: 105px;
+}
 .left {
   float: left;
 }
@@ -18,6 +40,18 @@
   justify-content: center;
 }
 
+.container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.sub-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .navbar {
   display: flex;
   flex-direction: row;

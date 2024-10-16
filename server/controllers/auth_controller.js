@@ -43,7 +43,7 @@ const logout = (req, res) => {
           return res.status(500).send('Failed to log out.');
         }
         res.clearCookie('connect.sid'); 
-        res.send('Logged out.');
+        res.status(200).json({message: "User logged out."});
       });
 }
 module.exports = {

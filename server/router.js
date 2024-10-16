@@ -1,8 +1,8 @@
 
 const { testEmail } = require('./controllers/email_controller');
 const { create_user, create_user_table } = require('./controllers/user_controller');
-const { login } = require('./controllers/auth_controller');
-const { createBookingTable } = require('./controllers/booking_controller');
+const { login, logout } = require('./controllers/auth_controller');
+const { createBookingTable, createBooking, allBookings, specificBooking, deleteBooking, updateBooking} = require('./controllers/booking_controller');
 
 const { isAuthenticated } = require('./middleware/auth');
 
@@ -27,6 +27,10 @@ const router = (app, connection) => {
         login(connection, req, res);
     });
 
+    app.post('/logout', (req, res) => {
+        logout(req, res);
+    });
+
     // Admin 
 
     app.get('/sendEmail', isAuthenticated, (req, res) => {
@@ -38,19 +42,19 @@ const router = (app, connection) => {
     });
 
     app.get('/bookings', (req, res) => {
-
+        allBookings(connection, req, res);
     });
 
     app.post('/createBooking', isAuthenticated, (req, res) => {
-
+        createBooking(connection, req, res);
     });
 
     app.post('/updateBooking', isAuthenticated, (req, res) => {
-
+        updateBooking(connection, req, res);
     });
 
     app.delete('/removeBooking', isAuthenticated, (req, res) => {
-
+        deleteBooking(connection, req, res);
     });
 }
 

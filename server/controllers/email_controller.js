@@ -6,8 +6,8 @@ const testEmail = async (req, res) => {
     resend.emails.send({
       from: 'jacobgoodwillie@gmail.com',
       to: 'jacobgoodwillie@gmail.com',
-      subject: 'Hello World',
-      html: '<p>Congrats on sending your <strong>first email</strong>!</p>'
+      subject: 'Test Mail',
+      html: '<p>This is just a <strong>test email</strong>. Do not reply.</p>'
     });
     console.log("working");
 }
