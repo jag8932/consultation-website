@@ -23,6 +23,9 @@ export default function Admin() {
     return (
         <>
          <div id="admin" className="container">
+            <div id="admin-header">
+                <h2>Manage Clients and Bookings</h2>
+            </div>
             <div id="admin-nav">
                 <ul>
                     <li>
