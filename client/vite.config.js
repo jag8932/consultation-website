@@ -17,7 +17,11 @@ export default defineConfig({
       '/sendEmail': {
         target: 'http://localhost:3000',
         changeOrigin: true
-      }
+      },
+      '/checkAuth': {
+        target: 'http://localhost:3000',
+        changeOrigin: true
+      },
     }
   }
 })

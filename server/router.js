@@ -4,16 +4,18 @@ const { create_user, create_user_table } = require('./controllers/user_controlle
 const { login, logout } = require('./controllers/auth_controller');
 const { createBookingTable, createBooking, allBookings, specificBooking, deleteBooking, updateBooking} = require('./controllers/booking_controller');
 
-const { isAuthenticated } = require('./middleware/auth');
+const { isAuthenticated, restrictedCountries } = require('./middleware/auth');
 
 
 const router = (app, connection) => {
-
     // Test endpoints 
-    app.get("/api", (req, res) => {
+    app.get("/api",restrictedCountries, (req, res) => {
         res.json({ fruits: ["bana", "pear", "apple", "lemon"]})
     });
 
+    app.get("/checkAuth", restrictedCountries, (req, res) => {
+        res.status(200).json({isAuthorized: true, message: ""});
+    });
     // User
     app.post('/createUser', (req, res) => {
         create_user(connection, req, res);

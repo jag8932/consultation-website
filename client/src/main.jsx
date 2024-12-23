@@ -5,9 +5,9 @@ import './index.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-        <div className='hero'>
-          <img src="engineering_1.jpg" alt="engineering picture"></img>
-        </div>
     <App />
+    <footer>
+    <a href="https://www.flaticon.com/free-icons/texture" title="texture icons">Texture icons created by luketaibai - Flaticon</a>
+    </footer>
   </StrictMode>,
 )

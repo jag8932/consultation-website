@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Bookings from '../components/Bookings';
 import Menu from '../components/menu';
 
 export default function Admin() {
@@ -12,7 +13,7 @@ export default function Admin() {
                 console.log("Emails");
                 break;
             case "Bookings":
-                setContent(<div>Bookings</div>);
+                setContent(<div><Bookings></Bookings></div>);
                 console.log("Bookings");
                 break;
             default:
@@ -23,10 +24,10 @@ export default function Admin() {
     return (
         <>
          <div id="admin" className="container">
-            <div id="admin-header">
+            <div id="admin-header" className="container-top">
                 <h2>Manage Clients and Bookings</h2>
             </div>
-            <div id="admin-nav">
+            <div id="admin-nav" className="container-side sub-container">
                 <ul>
                     <li>
                         <button className='menu-button' onClick={() => {setContentState("Emails")}}>
@@ -41,7 +42,7 @@ export default function Admin() {
                 </ul>
             </div>
             
-            <div id="admin-content" className="sub-container">
+            <div id="admin-content" className="sub-container container-content">
                 {content}
             </div>
          </div>

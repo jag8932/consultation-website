@@ -16,20 +16,37 @@
   color: var(--admin_header_txt);
 }
 #admin-nav {
-  padding: 25px;
-  width: 15%;
+
   background-color: var(--admin_nav_bg);
 }
 
 #admin-content {
-  padding: 25px;
-  width: 100%;
   background-color: var(--admin_content_bg);
+}
+#bookings {
+  position: relative;
+  top: -19px;
+}
+.column-container {
+  display: flex;
+  flex-direction: column;
+  background-color: lightgray;
+}
+
+.booking-item {
+  width: 100%;
+  background-color: white;
+  border: 1px solid lightgray;
+  display: flex;
+  flex-direction: row;
+}
+.booking-text {
+  color: black;
 }
 .menu-button {
   margin: 5px;
   background-color: white;
-  width: 105px;
+
 }
 .left {
   float: left;
@@ -44,13 +61,35 @@
   justify-content: center;
 }
 
+.hero {
+  display: flex;
+  justify-content: center;
+  background-image: url("parquet.png");
+  background-size: 60px;
+  background-repeat: repeat;
+}
 .container {
   position: relative;
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 15% auto auto;
 }
+.container-top {
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+.container-side {
+  grid-column-start: 1;
+  grid-column-end: 2;
 
+}
+.container-content {
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
 .sub-container {
   display: flex;
   flex-direction: column;
