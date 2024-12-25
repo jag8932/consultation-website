@@ -10,9 +10,8 @@ const createBooking = async (connection, req, res) => {
     const {name, email, message, booking_date, order_placed} = req.body;
 
     const values = [name, email, message, booking_date, order_placed];
-
     if (name && email && message && booking_date && order_placed) {
-
+        handle_execute(connection, create_new_booking, values);
     } else {
         res.status(400).json({error: "All fields must be filled out."});
     }
