@@ -8,6 +8,8 @@ module.exports = {
     booking_date Date, 
     order_placed Date)`,
     create_new_booking: `INSERT INTO bookings (name, email, message, booking_date, order_placed) VALUES (?, ?, ?, ?, ?)`,
+    select_all_bookings: `SELECT * FROM bookings`,
+    delete_booking: `DELETE FROM bookings WHERE ID = ?`,
     insert_user: `INSERT INTO users (Name, Password, IsAdmin) VALUES (?, ?, ?)`,
     select_all_users: `SELECT * FROM users`,
     select_users_equalto: `SELECT * FROM users WHERE Name = ?`,

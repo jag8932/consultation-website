@@ -1,9 +1,6 @@
 
 export default function NoPage() {
     return (<>
-        <div className='hero'>
-          <img src="engineering_1.jpg" alt="engineering picture"></img>
-        </div>
         <div id="no-page">
         <br></br>
             <img src="wrench-screwdriver-blue.svg" style={{width: '100px'}} alt="wrench screwdriver"></img>

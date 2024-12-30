@@ -43,6 +43,10 @@
 .booking-text {
   color: black;
 }
+
+.main-content {
+  padding: 20px;
+}
 .menu-button {
   margin: 5px;
   background-color: white;

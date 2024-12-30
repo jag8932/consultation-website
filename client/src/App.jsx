@@ -14,32 +14,36 @@ function App() {
   const [responseMessage, setResponseMessage] = useState("");
   const [content, setContent] = useState(<></>);
 
-  useEffect(()=> {
-      fetch("/checkAuth").then(response => response.json()).then(data => {
-       setIsAuthorized(data.isAuthorized);
-       setResponseMessage(data.message);
+  useEffect(() => {
+    fetch("/checkAuth").then(response => response.json()).then(data => {
+      setIsAuthorized(data.isAuthorized);
+      setResponseMessage(data.message);
     });
   }, []);
 
   return (
     <>
-    
-   <BrowserRouter>
-    <Routes>
-      <Route index element= {<Home />} />
-      <Route 
-        path="admin" 
-        element={<ProtectedRoute isAuthorized={isAuthorized} message={responseMessage}>
-        <Admin />
-      </ProtectedRoute>} 
-      />
-      <Route path="signin" element={<LoginPage />} />
-      <Route path="accessdenied" element={<AccessDenied message={responseMessage}/>} />
-      <Route path ="*" element={<NoPage />} />
-      
-    </Routes>
-   </BrowserRouter>
-   </>
+      <div className='hero'>
+        <img src="engineering_1.jpg" alt="engineering picture"></img>
+      </div>
+      <div className='main-content'>
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<Home />} />
+            <Route
+              path="admin"
+              element={<ProtectedRoute isAuthorized={isAuthorized} message={responseMessage}>
+                <Admin />
+              </ProtectedRoute>}
+            />
+            <Route path="signin" element={<LoginPage />} />
+            <Route path="accessdenied" element={<AccessDenied message={responseMessage} />} />
+            <Route path="*" element={<NoPage />} />
+
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </>
   )
 }
 
