@@ -10,16 +10,15 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import './App.css'
 
 function App() {
-  const [isAuthorized, setIsAuthorized] = useState(false);
+  const [isAuthorized, setIsAuthorized] = useState(true);
   const [responseMessage, setResponseMessage] = useState("");
-  const [content, setContent] = useState(<></>);
-
+/*
   useEffect(() => {
     fetch("/checkAuth").then(response => response.json()).then(data => {
       setIsAuthorized(data.isAuthorized);
       setResponseMessage(data.message);
     });
-  }, []);
+  }, []); */
 
   return (
     <>
@@ -32,7 +31,7 @@ function App() {
             <Route index element={<Home />} />
             <Route
               path="admin"
-              element={<ProtectedRoute isAuthorized={isAuthorized} message={responseMessage}>
+              element={<ProtectedRoute message={responseMessage}>
                 <Admin />
               </ProtectedRoute>}
             />

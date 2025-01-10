@@ -39,6 +39,11 @@ export default function Admin() {
                             Bookings
                         </button>
                     </li>
+                    <li>
+                        <button className='menu-button' onClick={() => {setContentState("Users")}}>
+                            Users
+                        </button>
+                    </li>
                 </ul>
             </div>
             

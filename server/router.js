@@ -13,7 +13,7 @@ const router = (app, connection) => {
         res.json({ fruits: ["bana", "pear", "apple", "lemon"]})
     });
 
-    app.get("/checkAuth", restrictedCountries, (req, res) => {
+    app.get("/checkAuth", (req, res) => { //restrictedCountries, 
         res.status(200).json({isAuthorized: true, message: ""});
     });
     // User
